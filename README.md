@@ -84,6 +84,36 @@ Controllers are defined at `controllers/userController.js`. Cached data is saved
 | `Accepet` | `*/` |
 | `Authorization` | `{{accessToken value}}` |
 
+#### Get User by Account Number
+
+```http
+  GET /user/account-number
+```
+| Headers | value      |
+| :-------- | :------- |
+| `Accepet` | `*/` |
+| `Authorization` | `{{accessToken value}}` |
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `accountNumber`      | `string` | **Required** |
+
+#### Get User by Identity Number
+
+```http
+  GET /user/identity-number
+```
+| Headers | value      |
+| :-------- | :------- |
+| `Accepet` | `*/` |
+| `Authorization` | `{{accessToken value}}` |
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `identityNumber`      | `string` | **Required** |
+
 
 #### Update User By userName
 
