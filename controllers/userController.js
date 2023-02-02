@@ -46,7 +46,7 @@ export default {
                 emailAddress: req.body.emailAddress,
                 identityNumber: req.body.identityNumber
             })
-            .then(async(data)=>{
+            .then(async(user)=>{
                 res.status(200).send({
                     message: 'Your account has been created.',
                     data: {
