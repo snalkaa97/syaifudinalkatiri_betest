@@ -37,3 +37,84 @@ Controllers are defined at `controllers/userController.js`. Cached data is saved
     - `udpate`
     - `delete`
 
+
+## API Reference
+
+#### Create User
+
+```http
+  POST /user
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `userName` | `string` | **Required** |
+| `accountNumber` | `string` | **Required** |
+| `emailAddress` | `string` | **Required** |
+| `identityNumber` | `string` | **Required** |
+
+
+##### To generate `Get User`, `Edit User`, and `Delete User`, First request `generate-token` from user you created before
+
+#### Generate Token
+
+```http
+  POST /generate-token
+```
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `accountNumber` | `string` | **Required** |
+| `identityNumber` | `string` | **Required** |
+
+
+##### You can get accessToken and fill the Authorization Header to:
+- `GET /user`
+- `PUT /user/${userName}`
+- `DELETE /user/${userName}`
+
+
+#### Get All Users
+
+```http
+  GET /user
+```
+| Headers | value      |
+| :-------- | :------- |
+| `Accepet` | `*/` |
+| `Authorization` | `{{accessToken value}}` |
+
+
+#### Update User By userName
+
+```http
+  PUT /user/${userName}
+```
+| Headers | value      |
+| :-------- | :------- |
+| `Accepet` | `*/` |
+| `Authorization` | `{{accessToken value}}` |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `userName`      | `string` | **Required** |
+
+| Body | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `accountNumber` | `string` | **Required** |
+| `emailAddress` | `string` | **Required** |
+
+
+#### Delete User By userName
+
+```http
+  DELETE /user/${userName}
+```
+| Headers | value      |
+| :-------- | :------- |
+| `Accepet` | `*/` |
+| `Authorization` | `{{accessToken value}}` |
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `userName`      | `string` | **Required** |
