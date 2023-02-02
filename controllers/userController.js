@@ -1,7 +1,10 @@
 import User from '../models/userModel.js'
-// import redis from 'redis';
 import Redis from 'ioredis'
 
+
+//REDIS LOCAL
+
+// import redis from 'redis';
 // (async () => {
 // 	redisClient = redis.createClient();
 
