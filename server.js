@@ -18,7 +18,7 @@ app.use(
 )
 mongoose.set('strictQuery', true);
 const main = async () => {
-    await mongoose.connect('mongodb://localhost:27017/ms-syaifudinalkatiri-betest',{
+    await mongoose.connect('mongodb+srv://alka:root@cluster0.f7k69ku.mongodb.net/?retryWrites=true&w=majority',{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
