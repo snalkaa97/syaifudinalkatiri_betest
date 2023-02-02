@@ -1,15 +1,25 @@
 import User from '../models/userModel.js'
-import redis from 'redis';
+// import redis from 'redis';
+import Redis from 'ioredis'
 
-let redisClient;
+// (async () => {
+// 	redisClient = redis.createClient();
 
+// 	redisClient.on("error", (error) => console.error(`Error : ${error}`));
+
+// 	await redisClient.connect();
+// })();
+
+let redisClient
 (async () => {
-	redisClient = redis.createClient();
-
-	redisClient.on("error", (error) => console.error(`Error : ${error}`));
-
-	await redisClient.connect();
+    redisClient = new Redis({
+        host: 'redis-18590.c299.asia-northeast1-1.gce.cloud.redislabs.com',
+        port: 18590,
+        password: 'xln6lJeV3fhoWVYhyTyxtHooVooCeb6C'
+     });
+    redisClient.on("error", (error) => console.error(`Error : ${error}`));;
 })();
+
 
 export default {
     async getAll(req, res) {

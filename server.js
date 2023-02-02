@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import router from './routes/index.js'
 import dotenv from 'dotenv'
+import Redis from 'ioredis'
 // import redis from 'redis'
 dotenv.config()
 
