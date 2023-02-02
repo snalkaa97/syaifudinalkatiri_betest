@@ -32,6 +32,50 @@ export default {
             res.json({error: e});
         }
     },
+    async getByAccountNumber(req, res) {
+        try{
+            const user = await User.findOne({
+                accountNumber: req.params.accountNumber
+            });
+            if(!user){
+                return res.json({
+                    message: 'user not found',
+                })
+            }
+            const result = {
+                status: "success",
+                title: 'get user by account number',
+                data: user,
+                errors:null
+            }
+            res.status(200).send(result);
+        } catch(e){
+            console.log(e);
+            res.json({error: e});
+        }
+    },
+    async getByIdentityNumber(req, res) {
+        try{
+            const user = await User.findOne({
+                identityNumber: req.params.identityNumber
+            });
+            if(!user){
+                return res.json({
+                    message: 'user not found',
+                })
+            }
+            const result = {
+                status: "success",
+                title: 'get user by identity number',
+                data: user,
+                errors:null
+            }
+            res.status(200).send(result);
+        } catch(e){
+            console.log(e);
+            res.json({error: e});
+        }
+    },
     async create(req, res){
         try {
             const cekUser = await User.find({
