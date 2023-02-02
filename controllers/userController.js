@@ -37,7 +37,6 @@ export default {
             const cekUser = await User.find({
                 $or:[{userName: req.body.userName}, {email: req.body.emailAddress}, {accountNumber: req.body.accountNumber}, {identityNumber: req.body.identityNumber}]
             })
-            console.log(cekUser);
             if(cekUser.length > 0){
                 return res.json({message: 'user already exists'})
             }
@@ -48,7 +47,6 @@ export default {
                 identityNumber: req.body.identityNumber
             })
             .then(async(data)=>{
-                console.log(data);
                 res.status(200).send({
                     message: 'Your account has been created.',
                     data: {
@@ -80,7 +78,6 @@ export default {
                     $ne: req.params.userName
                 }
             })
-            console.log(cekUser);
             if(cekUser.length>0){
                 return res.json({
                     message: 'email address or account number already taken'

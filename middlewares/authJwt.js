@@ -10,7 +10,6 @@ export default {
                 accountNumber: req.body.accountNumber,
                 identityNumber: req.body.identityNumber
             })
-            console.log(user);
             if(!user){
                 return res.json({
                     auth: false,
@@ -39,9 +38,6 @@ export default {
         }
     },
     verifyToken(req, res, next){
-        // if(req.url==='/' && req.method==='POST'){
-        //     next();
-        // }
         let tokenHeader = req.headers['authorization'];
 		if (tokenHeader == undefined) {
 			return res.status(500).send({
