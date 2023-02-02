@@ -29,6 +29,6 @@ const main = async () => {
 }
 main().catch(err => console.log(err));
 app.use(router);
-app.listen(process.env.NODE_PORT || 3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log(`running on port ${process.env.NODE_PORT}`);
 })
