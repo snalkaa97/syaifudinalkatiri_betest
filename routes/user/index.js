@@ -1,10 +1,14 @@
 import express from 'express';
 import userController from '../../controllers/userController.js';
+import authJwt from "../../middlewares/authJwt.js";
 const route = express.Router();
 
 // route.get('/', (req, res) => {
 //     res.status(200).send({ message: 'user home'})
 // })
-route.get('/', userController.getAll);
+route.get('/', [authJwt.verifyToken], userController.getAll);
+route.post('/', userController.create);
+route.put('/:userName',[authJwt.verifyToken], userController.update);
+route.delete('/:userName',[authJwt.verifyToken], userController.delete);
 
 export default route;

@@ -13,7 +13,7 @@ const user = Schema({
         type: "string",
         required: true,
     },
-    indentityNumber:{
+    identityNumber:{
         type: "string",
         required: true,
     },
