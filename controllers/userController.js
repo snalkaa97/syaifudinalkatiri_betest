@@ -1,5 +1,6 @@
 import User from '../models/userModel.js'
 import Redis from 'ioredis'
+import { createClient } from 'redis';
 
 
 //REDIS LOCAL
@@ -15,7 +16,7 @@ import Redis from 'ioredis'
 
 let redisClient
 (async () => {
-    redisClient = new Redis({
+    redisClient = createClient({
         host: 'redis-18590.c299.asia-northeast1-1.gce.cloud.redislabs.com',
         port: 18590,
         password: 'xln6lJeV3fhoWVYhyTyxtHooVooCeb6C'
