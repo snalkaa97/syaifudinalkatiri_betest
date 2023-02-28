@@ -1,5 +1,7 @@
 import User from '../models/userModel.js'
 import Redis from 'ioredis'
+import dotenv from 'dotenv'
+dotenv.config()
 
 
 //REDIS LOCAL
@@ -18,7 +20,7 @@ let redisClient
     redisClient = new Redis({
         host: 'redis-18590.c299.asia-northeast1-1.gce.cloud.redislabs.com',
         port: 18590,
-        password: 'xln6lJeV3fhoWVYhyTyxtHooVooCeb6C'
+        password: `${process.env.REDIS_PASSWORD}`
      });
     redisClient.on("error", (error) => console.error(`Error : ${error}`));;
 })();
