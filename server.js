@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import router from './routes/index.js'
 import dotenv from 'dotenv'
+import { MongoClient, ServerApiVersion } from 'mongodb';
 // import redis from 'redis'
 dotenv.config()
 
@@ -22,7 +23,7 @@ const main = async () => {
     //     useNewUrlParser: true,
     //     useUnifiedTopology: true,
     // })
-    await mongoose.connect('mongodb+srv://alka:root@cluster0.f7k69ku.mongodb.net/?retryWrites=true&w=majority',{
+    await mongoose.connect('mongodb+srv://alka:root@cluster0.f7k69ku.mongodb.net/ms-syaifudinalkatiri-betest?retryWrites=true&w=majority',{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
