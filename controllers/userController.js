@@ -17,11 +17,12 @@ dotenv.config()
 
 let redisClient
 (async () => {
-    redisClient = new Redis({
-        host: 'redis-18590.c299.asia-northeast1-1.gce.cloud.redislabs.com',
-        port: 18590,
-        password: `${process.env.REDIS_PASSWORD}`
-     });
+    redisClient = Redis.createClient();
+    // redisClient = new Redis({
+    //     host: 'redis-18590.c299.asia-northeast1-1.gce.cloud.redislabs.com',
+    //     port: 18590,
+    //     password: `${process.env.REDIS_PASSWORD}`
+    //  });
     redisClient.on("error", (error) => console.error(`Error : ${error}`));;
 })();
 
